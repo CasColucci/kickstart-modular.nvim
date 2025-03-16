@@ -25,4 +25,28 @@ return {
   {
     'ThePrimeagen/vim-be-good',
   },
+  {
+    'zaldih/themery.nvim',
+    lazy = false,
+    config = function()
+      require('themery').setup {
+        themes = {
+          {
+            name = 'Cyberdream',
+            colorscheme = 'cyberdream',
+            before = function()
+              local cyberdream = require 'cyberdream'
+              cyberdream.setup {
+                transparent = true,
+              }
+            end,
+          },
+          {
+            name = 'Nightfox',
+            colorscheme = 'nightfox',
+          },
+        },
+      }
+    end,
+  },
 }
